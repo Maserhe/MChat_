@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			.mui-bar {
+				box-shadow: 0 0 0px rgba(0, 0, 0, .85);
+			}
+
+			.icon-1 {
+				padding-top: 8px;
+				padding-left: 9px;
+				color: #333;
+			}
+
+			.bartab {
+				margin-top: 8px;
+			}
+
+			.mui-bar-footer {
+				height: 55px;
+			}
+
+			#btn {
+				margin-left: 5px;
+				padding: 5px 2px;
+				top: 4px;
+				font-size: 12px;
+			}
+
+			.entry-l {
+				/*左三*/
+				float: left;
+				position: relative;
+				margin-left: 60px;
+				margin-top: 20px;
+				width: 280px;
+				background: #fff;
+				padding: 10px;
+				/*设置圆角*/
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+
+			.entry-r {
+				/*右三*/
+				float: right;
+				position: relative;
+				margin-right: 60px;
+				margin-top: 20px;
+				width: 280px;
+				background: #4CD964;
+				padding: 10px;
+				/*设置圆角*/
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+			}
+
+			/*左三角*/
+			.entry-trangle-left {
+				position: absolute;
+				top: 5px;
+				left: -10px;
+				width: 0;
+				height: 0;
+				border-top: 15px solid transparent;
+				border-bottom: 15px solid transparent;
+				border-right: 15px solid #fff;
+			}
+
+			/*右三角*/
+			.entry-trangle-right {
+				position: absolute;
+				top: 5px;
+				right: -10px;
+				width: 0;
+				height: 0;
+				border-top: 15px solid transparent;
+				border-bottom: 15px solid transparent;
+				border-left: 15px solid #4CD964;
+			}
+
+			.entry-head-l {
+				position: absolute;
+				top: 5px;
+				left: -54px;
+				height: 40px;
+				width: 40px;
+			}
+
+			.entry-head-r {
+				position: absolute;
+				top: 0px;
+				right: -54px;
+				height: 40px;
+				width: 40px;
+			}
+
+			img {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<span class="mui-action-back mui-icon mui-icon-arrowleft"></span>
+			<h1 class="mui-title">聊天</h1>
+		</header>
+		<div class="mui-content">
+			<div class="content">
+
+			</div>
+			
+		</div>
+		<div class="mui-bar mui-bar-footer">
+			<div class="mui-row bartab">
+				<div class="mui-col-sm-1 mui-col-xs-1"><span class="mui-icon mui-icon-mic"></span></div>
+				<div class="mui-col-sm-9 mui-col-xs-9"><input type="text" class="mui-input-clear" placeholder="Please enter the content"
+					 id="inp"></div>
+				<div class="mui-col-sm-1 mui-col-xs-1"><span class="mui-icon mui-icon-help icon-1"></span></div>
+				<div class="mui-col-sm-1 mui-col-xs-1">
+					<span class="mui-icon mui-icon-plus icon-1" id="ico"></span>
+					<button type="button" class="mui-btn mui-btn-success" id="btn">Send</button>
+				</div>
+		
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.js"></script>
+	<script type="text/javascript">
+		mui.init()
+		mui.ready(function() {
+			var ico = document.getElementById("ico");
+			var btn = document.getElementById("btn");
+			var inp = document.getElementById("inp");
+			inp.addEventListener("input", yincang);
+			inp.addEventListener("keydown", send1);
+			btn.addEventListener("click", send);
+			document.getElementsByClassName("mui-title")[0].innerText = GetQueryString('name');
+			//$("#age").text(GetQueryString('age'));
+		})
+		
+         var headimg=GetQueryString('head');
+		 var mingyan = ["God helps those who help themselves.","Storms make trees take deeper roots.","The shortest answer is doing.","All things are difficult before they are easy. Just do it.","The first step is as good as half over.","You never know your luck.","Sow nothing, reap nothing.","The wealth of the mind is the only wealth.","You can't judge a tree by its bark.","Clothes do not make the man.","To be both a speaker of words and a doer of deeds.","Variety is the spice of life.","Bad times make a good man.","There is no royal road to learning.","Doubt is the key to knowledge.","Sharp tools make good work."]
+		 
+		  function getmingyan(){
+		 	 let tmp = mingyan[parseInt(Math.random()*mingyan.length)]
+		 	 return tmp;
+		  }
+		  
+		 function GetQueryString(name) {
+		 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		 	var r = window.location.search.substr(1).match(reg);
+		 	console.log(r);
+		 	if (r != null) return unescape(r[2]);
+		 	return null;
+		 }
+		 
+		 function yincang() {
+		 	let inp = document.getElementById("inp");
+		 	console.log(1, inp.value);
+		 	if (inp.value != "") {
+		 		btn.style.display = "block";
+		 		ico.style.display = "none";
+		 	} else {
+		 		btn.style.display = "none";
+		 		ico.style.display = "block";
+		 	}
+		 }
+		 
+		 function send() {
+		 	let inp = document.getElementById("inp");
+		 	let con = document.getElementsByClassName("content")[0];
+		 	btn.style.display = "none";
+		 	ico.style.display = "block";
+		 	console.log(1, inp.value);
+		 	addmsg(2,inp.value);
+		 	let msg = inp.value;
+		 	if (msg.indexOf("love") != -1) {
+		 		addmsg(1,"You are the love of my life.");
+		 	} else {
+		 		addmsg(1,"Me too,"+inp.value);
+		 	}
+		 	inp.value = "";
+		 
+		 }
+		 
+		 function addmsg(sendid,msg){ //1为左 其他为右
+		 	let con = document.getElementsByClassName("content")[0];
+		 	if(sendid==1){
+		 		con.innerHTML +='<div class="entry-l"><div class="entry-head-l"><img src="'+headimg+'"></div><div class="entry-trangle-left"></div>'+msg+'</div>'
+		 	}else{
+		 		con.innerHTML +='<div class="entry-r"><div class="entry-head-r"><img src="img/head/head.jpg"></div><div class="entry-trangle-right"></div>' +msg + '</div>'
+		 	}
+		 }
+		 
+		 function send1(u) {
+		 	console.log(u, u.keyCode);
+		 	if (u.keyCode == 13) {
+		 		send();
+		 	}
+		 }
+		 
+             addmsg(1,getmingyan());
+			 addmsg(2,getmingyan());
+		if(parseInt(Math.random()*10)<5){
+			 addmsg(1,getmingyan());
+			 }
+			 addmsg(1,getmingyan());
+			 addmsg(2,getmingyan());
+		 if(parseInt(Math.random()*10)<5){
+			 addmsg(2,getmingyan());
+		 }
+		 
+	</script>
+</html>

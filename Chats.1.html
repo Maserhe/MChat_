@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			.time {
+				float: right;
+				color: #999999;
+				font-size: 13px;
+			}
+
+			.con {
+				font-size: 16px;
+				color: #333;
+			}
+
+			p {
+				color: #999999;
+				font-size: 13px;
+			}
+
+			img {
+				border-radius: 8px;
+			}
+
+			#new {
+				background-color: #f00;
+				color: #fff;
+				border-radius: 50%;
+				text-align: center;
+				position: absolute;
+				font-size: 12px;
+				width: 18px;
+				height: 18px;
+				left: 47px;
+				top: 3px;
+			}
+			.mui-table-view{
+				margin-top: 0px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<div id="new">15</div>
+						<img class="mui-media-object mui-pull-left" src="img/head/head%20(14).gif">
+					<div class="mui-media-body">
+						<span class="con">
+							Ansi
+						</span>
+						<span class="time">
+							17:13
+						</span>
+						<p class='mui-ellipsis'>不想别人否定，自己就要更加努力。</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="img/head/head%20(18).gif">
+					<div class="mui-media-body">
+						<span class="con">
+							伟大的念威
+						</span>
+						<span class="time">
+							17:13
+						</span>
+						<p class='mui-ellipsis'>感情有着极大的鼓舞力量，因此，它是一切道德行为的重要前提，谁要是没有强烈的志向，也就不能够热烈地把这个志向体现于事业中。</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="img/head/head%20(35).gif">
+					<div class="mui-media-body">
+						<span class="con">
+							熊仔
+						</span>
+						<span class="time">
+							17:13
+						</span>
+						<p class='mui-ellipsis'>勇敢坚毅真正之才智乃刚毅之志向。</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="img/head/head%20(50).gif">
+					<div class="mui-media-body">
+						<span class="con">
+							旺旺仙贝
+						</span>
+						<span class="time">
+							17:13
+						</span>
+						<p class='mui-ellipsis'>志向不过是记忆的奴隶，生气勃勃地降生，但却很难成长。</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="img/head/head%20(55).gif">
+					<div class="mui-media-body">
+						<span class="con">
+							好吃不辣
+						</span>
+						<span class="time">
+							17:13
+						</span>
+						<p class='mui-ellipsis'>人所缺乏的不是才干而是志向，不是成功的能力而是勤劳的意志。</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media">
+				<a href="javascript:;">
+					<img class="mui-media-object mui-pull-left" src="img/head/head%20(74).gif">
+					<div class="mui-media-body">
+						<span class="con">
+							我最美
+						</span>
+						<span class="time">
+							17:13
+						</span>
+						<p class='mui-ellipsis'>人的理想志向往往和他的能力成正比。</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		</div>
+	</body>
+	<script type="text/javascript" charset="utf-8">
+		mui.init();
+		mui.ready(function(){
+				var list = document.getElementsByClassName("mui-table-view-cell");
+			for(i of list){
+				i.onclick = function(){
+					mui.openWindow({
+						url:"im.html",
+						id:"im",
+						options:"test",
+					})
+				}
+			}
+		})
+	</script>
+</html>
